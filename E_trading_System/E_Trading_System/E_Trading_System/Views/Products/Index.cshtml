@@ -1,0 +1,91 @@
+﻿@model IEnumerable<E_Trading_System.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    body {
+        background-image: url('@Url.Content("~/Images/India.jpg")');
+        background-size: cover; /* Adjusts the background image size to cover the entire viewport */
+        background-repeat: no-repeat; /* Prevents the background image from repeating */
+        background-position: center; /* Centers the background image */
+        padding-top: 50px; /* Add some space at the top */
+    }
+
+    .product-container {
+        display: flex; /* Use flexbox layout */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: center; /* Center items horizontally */
+        max-width: 1200px; /* Limit maximum width */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .product-card {
+        width: 300px; /* Set the width of each product card */
+        margin: 20px; /* Add some space between cards */
+        background-color: white; /* Set background color for cards */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+        border-radius: 8px; /* Add rounded corners */
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+    .card-img-top {
+        width: 100%; /* Make the image responsive */
+        height: 200px; /* Set the fixed height for all images */
+        object-fit: cover; /* Ensure the image covers the entire space */
+        border-top-left-radius: 8px; /* Add rounded corners to the top left */
+        border-top-right-radius: 8px; /* Add rounded corners to the top right */
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        margin-bottom: 0; /* Remove default margin */
+    }
+
+    .card-text {
+        color: #333; /* Set text color */
+    }
+
+    .card-footer {
+        padding: 20px;
+        background-color: #f8f9fa; /* Set background color for footer */
+        border-bottom-left-radius: 8px; /* Add rounded corners to the bottom left */
+        border-bottom-right-radius: 8px; /* Add rounded corners to the bottom right */
+    }
+</style>
+
+
+<h2 class="text-center mt-5">Products</h2>
+
+<div class="product-container">
+    @foreach (var item in Model)
+    {
+        <div class="product-card">
+            <img src="@Url.Content("~/Images/" + item.ImageFileName)" class="card-img-top" alt="@item.Product_Name">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Product_Name)</h5>
+                <p class="card-text">
+                    <strong>Brand:</strong> @Html.DisplayFor(modelItem => item.Brand)<br />
+                    <strong>Color:</strong> @Html.DisplayFor(modelItem => item.Color)<br />
+                    <strong>Price:</strong> @Html.DisplayFor(modelItem => item.Price)<br />
+                    <strong>Available Stock:</strong> @Html.DisplayFor(modelItem => item.Available_Stock)<br />
+                    <strong>Status:</strong> @Html.DisplayFor(modelItem => item.Status)<br />
+                    <strong>Vendor:</strong> @Html.DisplayFor(modelItem => item.Vendor.Vendor_Name)
+                </p>
+            </div>
+            <div class="card-footer">
+                @Html.ActionLink("Details", "Details", new { id = item.Product_Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Product_Id }, new { @class = "btn btn-secondary" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Product_Id }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    }
+</div>
