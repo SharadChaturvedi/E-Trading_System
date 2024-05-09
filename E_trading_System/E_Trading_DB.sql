@@ -64,6 +64,9 @@ Vendor_Age int not null,
 [Hint_Answer] nvarchar(50),
 [Status] varchar(20))
 insert into Vendors values(1001,'AmarNath','AmarNath123@gmail.com',9870006790,'Hyderabad','Electronics',7,'Amar@123',1,'cricket','Active')
+insert into Vendors values(1002,'PeterSon','PeterSon123@gmail.com',9870006791,'Lucknow','Clothings',4,'PeterSon@123',2,'Lucknow','Active')
+insert into Vendors values(1003,'Sanjay Singh','Sanjay@gmail.com',9870006792,'Kanpur','Grocery',4,'Sanjay@123',3,'Golu','Active')
+insert into Vendors values(1004,'Sharad Malhotra','Sharad123@gmail.com',9870006793,'Mumbai','Automobile',4,'Sharad@123',3,'Raka','Active')
  
 ----------------------This is the table for the Orders ----------------
 Create Table Orders
@@ -98,6 +101,29 @@ ADD ImageFileName varchar(100);
 UPDATE Products
 SET ImageFileName = 'Television.jpg'
 WHERE Product_Name = 'Television';
+insert into Products Values (7,1002,'Sweater','Gucchi','Brown',3200,2,'Available','Sweater.jpg')
+insert into Products Values (8,1002,'Woolen Top','Prada','Green',4000,2,'Available','WoolenTop.jpg')
+insert into Products Values (9,1002,'Jeans','Jack&Jones','Blue',3600,2,'Available','Jeans.jpg')
+insert into Products Values (10,1002,'T-Shirt','Gucchi','Multi-Color',1000,2,'Available','Tshirts.jpg')
+insert into Products Values (11,1002,'Hoodies','Adidas','Gray',5000,2,'Available','GreyHoodie.jpg')
+insert into Products Values (13,1002,'Rice','HindustanRice','Palewhite',1200,2,'Available','Rice.jpg')
+insert into Products Values (14,1003,'Cooking Oil','Fortune','yellow',1000,6,'Available','CookingOil.jpg')
+insert into Products Values (15,1003,'Eggs','Indianeggs','Brown',200,6,'Available','Eggs.jpg')
+insert into Products Values (16,1003,'Bread','Amul','Brown',100,6,'Available','Bread.jpg')
+insert into Products Values (17,1003,'Vegetable Bag','Multi-Color','Black',300,6,'Available','Vegetables.jpg')
+insert into Products Values (18,1003,'Fruit Bag','FreshIndia','multi-Color',400,6,'Available','Fruits.jpg')
+insert into Products Values (19,1003,'Sugar','fortune','White',400,6,'Available','Sugar.jpg')
+insert into Products Values (20,1004,'Tycoon-5 series','BMW','Black',70000000,1,'Available','BMW.jpg')
+insert into Products Values (21,1004,'GLA200D','Mercedes-Benz','Black',100000000,2,'Available','Benz.jpg')
+insert into Products Values (22,1004,'G-Wagon','Mercedes-Benz','Black',200000000,1,'Available','G.jpg')
+insert into Products Values (23,1004,'Avantador','Lamborgini','Red',70000000,1,'Available','Lambo.jpg')
+insert into Products Values (24,1004,'Fortuner','Toyota','Black',42000000,1,'Available','Fortuner.')
+
+
+
+
+
+
 
 
 ----------------------This is the Table for Bucket------------------
